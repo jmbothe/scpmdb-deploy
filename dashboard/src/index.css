@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  color: #0097A7;
+}
+
+h1 {
+  display: block;
+  width: 60%;
+  background-color: #0097A7;
+  margin: 0;
+  padding: .5%; 
+  color: #B2EBF2;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: .5%;
+}
+
+.main-header h2 {
+  display: block;
+  width: 40%;
+  background-color: #0097A7;
+  margin: 0;
+  padding-top: 1%;
+  text-align: center; 
+  color:  #B2EBF2;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #757575;
+  color: white;
+}
+
+.sidebar header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar header > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  width: 50%;
+  cursor: pointer;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar h3 {
+  margin: 0;
+}
+
+.light-grey {
+  background-color: #aaa;
+}
+
+.inset-shadow-right {
+  box-shadow: inset 3px -3px 8px #555;
+}
+
+.inset-shadow-left {
+  box-shadow: inset -3px -3px 8px #555;
+}
+
+.team-ul li {
+  padding: 5% 2%;
+  border-bottom: 1px solid #111;
+}
+
+.arrow {
+  font-weight: 900;
+  float: right;
+  text-align: right;
+}
+
+.milestone-header {
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 6px 6px 6px #ccc;
+  background-color: #eee;
+}
+
+.milestone-header > div {
+  border-right: solid 1px #999;
+}
+
+.milestone-header > div:last-of-type {
+  border-right: none;
+}
+
+.milestone-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.milestone-container * {
+  padding: 1.5% 0;
+  text-align: center;
+}
+
+.milestone-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #999;
+}
+
+.milestone-container > div span {
+  text-align: right;
+  width: 70%;
+}
+
+.milestone-container > div input {
+  width: 30%;
+  outline: none;
+}
+
+.projects-list-ul button {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+}
+
+.projects-list-ul button:hover {
+  background-color: #aaa;
+}
+
+.project-view {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 0.5%;
+}
+
+.project-tiles {
+  display: flex;
+}
+
+.project-tiles > section {
+  display: flex;
+  flex-direction: column;
+  width: 33.333%;
+  border-right: 1px solid #999;
+  padding: 1%;
+}
+
+.project-tiles > section:last-of-type {
+  border-right: none;
+}
+
+.tile-heading {
+  padding: 0 5%;
+  background-color: #0097A7;
+  color: #B2EBF2;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.project-details-tile li {
+  padding: 3% 0;
+  border-bottom: 1px solid #999;
+}
+
+.crew-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.crew-toggle-container {
+  display: flex;
+  align-items: center;
+  padding: 6% 0;
+  border-bottom: 1px solid #999;
+}
+
+.crew-list-tile > div > button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.crew-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 0;
+  border-bottom: 1px solid #999;
+}
+
+.crew-list-item a {
+  color: black;
+}
+
+.crew-list-item-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crew-list-item-button-wrapper button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+  margin-top: 10%;
+  outline: none;
+  resize: none;
+}

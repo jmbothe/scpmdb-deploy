@@ -1,0 +1,80 @@
+version: '3'
+
+services:
+
+  eureka:
+    image: anapsix/alpine-java:8_jdk_unlimited
+    ports:
+      - '8761:8761'
+    working_dir: /service-registry
+    volumes:
+      - ./service-registry:/service-registry
+    command: './gradlew bootRun'
+    environment:
+      - GRADLE_USER_HOME=cache
+      - SPRING_PROFILES_ACTIVE=dev
+
+  api-gateway:
+    image: anapsix/alpine-java:8_jdk_unlimited
+    ports:
+      - '8080:8080'
+    working_dir: /api-gateway
+    volumes:
+      - ./api-gateway:/api-gateway
+    depends_on:
+      - eureka
+    command: './gradlew bootRun'
+    environment:
+      - GRADLE_USER_HOME=cache
+      - SPRING_PROFILES_ACTIVE=dev
+
+  employees-api:
+    image: anapsix/alpine-java:8_jdk_unlimited
+    ports:
+      - '8081:8081'
+    working_dir: /employees-api
+    volumes:
+      - ./employees-api:/employees-api
+    depends_on:
+      - eureka
+      - postgresdev
+    command: './gradlew bootRun'
+    environment:
+      - GRADLE_USER_HOME=cache
+      - SPRING_PROFILES_ACTIVE=dev
+
+  projects-api:
+    image: anapsix/alpine-java:8_jdk_unlimited
+    ports:
+      - '8082:8082'
+    working_dir: /projects-api
+    volumes:
+      - ./projects-api:/projects-api
+    depends_on:
+      - eureka
+      - postgresdev
+    command: './gradlew bootRun'
+    environment:
+      - GRADLE_USER_HOME=cache
+      - SPRING_PROFILES_ACTIVE=dev
+
+  dashboard:
+    build: ./dashboard
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./dashboard/src:/dashboard/src
+      - ./dashboard/public:/dashboard/public
+
+  postgresdev:
+    image: postgres
+    volumes:
+      - ./docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
+    ports:
+     - "5432:5432"
+    environment:
+     - POSTGRES_MULTIPLE_DATABASES=employees,projects
+     - POSTGRES_PASSWORD=password
+     - POSTGRES_USER=postgres
