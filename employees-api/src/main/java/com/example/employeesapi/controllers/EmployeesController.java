@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://scpmdb-dashboard.s3-website-us-east-1.amazonaws.com")
 @RestController
 public class EmployeesController {
 

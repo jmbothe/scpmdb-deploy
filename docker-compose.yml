@@ -58,16 +58,6 @@ services:
       - GRADLE_USER_HOME=cache
       - SPRING_PROFILES_ACTIVE=dev
 
-  dashboard:
-    build: ./dashboard
-    expose:
-      - 3000
-    ports:
-      - 3000:3000
-    volumes:
-      - ./dashboard/src:/dashboard/src
-      - ./dashboard/public:/dashboard/public
-
   postgresdev:
     image: postgres
     volumes:
